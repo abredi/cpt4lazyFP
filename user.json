@@ -1,0 +1,255 @@
+[
+	{
+		"email": "cmapada@miu.edu",
+		"password": "password1",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Carl Mapada",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Boston",
+			"roleName": "STUDENT",
+			"preferredJob": "Machine Learning Engineer",
+			"preferredCompany": "Google",
+			"skills": [
+				"Java",
+				"Springboot",
+				"Python",
+				"Microsoft .NET",
+				"SQL",
+				"Azure",
+				"Terraform"
+			],
+			"experience": [
+				{
+					"company": "Microsoft",
+					"position": "Software Engineer",
+					"responsibility": "Test Software",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				}
+			]
+		}
+	},
+	{
+		"email": "achorito@miu.edu",
+		"password": "password2",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Amanuel Chorito",
+			"telephoneNumber": "+1 412-452-8545",
+			"address": "Chicago",
+			"roleName": "STUDENT",
+			"preferredJob": "Frontend Developer",
+			"preferredCompany": "Apple",
+			"skills": [
+				"Java",
+				"Springboot",
+				"React Js",
+				"SQL",
+			],
+			"experience": [
+				{
+					"company": "Microsoft",
+					"position": "Software Engineer",
+					"responsibility": "Test Software",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				}
+			]
+		}
+	},
+	{
+		"email": "arali@miu.edu",
+		"password": "password3",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Abdulaziz Ali",
+			"telephoneNumber": "+1 412-452-2354",
+			"address": "New York",
+			"roleName": "STUDENT",
+			"preferredJob": "Software Engineer",
+			"preferredCompany": "Microsoft",
+			"experience": [
+				{
+					"company": "Microsoft",
+					"position": "Software Engineer",
+					"responsibility": "Test Software",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				}
+			]
+		}
+	},
+	{
+		"email": "ayimam@miu.edu",
+		"password": "password4",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Haymanot Yimam",
+			"telephoneNumber": "+1 412-452-9654",
+			"address": "California",
+			"roleName": "STUDENT",
+			"preferredJob": "Software Engineer",
+			"preferredCompany": "Amazon",
+			"experience": [
+				{
+					"company": "Microsoft",
+					"position": "Software Engineer",
+					"responsibility": "Test Software",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				}
+			]
+		}
+	},
+	{
+		"email": "ja.elleuchy@miu.edu",
+		"password": "password5",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Jawaher Elleuchy",
+			"telephoneNumber": "+1 412-452-3654",
+			"address": "Seattle",
+			"roleName": "STUDENT",
+			"preferredJob": "Software Developer",
+			"preferredCompany": "Microsoft",
+			"experience": [
+				{
+					"company": "Microsoft",
+					"position": "Software Engineer",
+					"responsibility": "Test Software",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				}
+			]
+		}
+	},
+	{
+		"email": "tcruise@email.com",
+		"password": "password6",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Tom Cruise",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "New York",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Engineer",
+			"currentCompany": "Bank of America"
+		}
+	},
+	{
+		"email": "ncagee@email.com",
+		"password": "password7",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Nicolas Cage",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "California",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Engineer",
+			"currentCompany": "Bank of America",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "My company is looking for a Software Engineer",
+					"description": "This is a referral post",
+					"requests": [
+						{
+							"refStatus": "Accepted",
+							"reqDate": "2021-04-11",
+							"postedBy": "Nicolas Cage",
+							"requestSentBy": "Haymanot Yimam"
+						},
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Nicolas Cage",
+							"requestSentBy": "Abdulaziz Ali"
+						},
+						{
+							"refStatus": "Accepted",
+							"reqDate": "2021-04-11",
+							"postedBy": "Nicolas Cage",
+							"requestSentBy": "Carl Mapada"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"email": "janiston@email.com",
+		"password": "password8",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Jennifer Aniston",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Minneapolis",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Engineer",
+			"currentCompany": "Bank of America"
+		}
+	},
+	{
+		"email": "sstone@email.com",
+		"password": "password9",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Sharon Stone",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Nevada",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Engineer",
+			"currentCompany": "Bank of America",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "My company is looking for a Software Engineer",
+					"description": "This is a referral post",
+					"requests": [
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Sharon Stone",
+							"requestSentBy": "Haymanot Yimam"
+						},
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Sharon Stone",
+							"requestSentBy": "Carl Mapada"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"email": "jryan@email.com",
+		"password": "password10",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Jack Ryan",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Iowa",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Engineer",
+			"currentCompany": "Bank of America",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "My company is looking for a Software Engineer",
+					"description": "This is a referral post",
+					"requests": [
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Jack Ryan",
+							"requestSentBy": "Carl Mapada"
+						}
+					]
+				}
+			]
+		}
+	}
+]

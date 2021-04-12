@@ -1,0 +1,6 @@
+applicationType: cli
+defaultPackage: com.cpt4lazy
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, graalvm, http-client, java, junit, logback, maven, picocli, picocli-java-application, picocli-junit, readme, shade, yaml]
