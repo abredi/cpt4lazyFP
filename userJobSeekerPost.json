@@ -32,12 +32,12 @@
 				{
 					"jobID": " 1",
 					"jobTitle": "software engineer",
-					"place": " "
+					"place": "Chicago "
 				},
 				{
 					"jobID": " 2",
 					"jobTitle": "Computer engineer",
-					"place": " "
+					"place": "New York"
 				}
 			]
 		}
@@ -185,7 +185,21 @@
 							"requestSentBy": "Carl Mapada"
 						}
 					]
+				},
+				{
+					"type": "com.cpt4lazy.model.JobLink",
+
+					"url": [
+						"http://glasdoor.com",
+						"http://glasdoor.com",
+						"http://glasdoor.com",
+						"http://glasdoor.com",
+						"http://glasdoor.com",
+						"http://glasdoor.com"
+
+					]
 				}
+
 			]
 		}
 	},
