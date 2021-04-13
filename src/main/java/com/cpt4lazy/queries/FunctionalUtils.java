@@ -93,4 +93,24 @@ public abstract class FunctionalUtils {
                     .limit(k)
                     .map(a -> a.getKey())
                     .collect(Collectors.toList());
+    /**
+     * @author Amanuel E.Chorito
+     */
+    public static BiFunction<List<User>,Integer,List<String>>topJobsApplied=(jobs,k)->
+                Optional.ofNullable(jobs).orElse(List.of()).stream()
+                .filter(r->r.getRole() instanceof JobSeeker)
+                .map(s->(JobSeeker)s.getRole())
+                .flatMap(t-> Optional.ofNullable(t.getJobsApplied()).orElse(List.of()).stream())
+                .collect(Collectors.groupingBy(Job::getJobTitle))
+                .entrySet().stream()
+                .sorted((t1,t2)->t2.getValue().size() -t1.getValue().size())
+                .limit(k).map(n->n.getKey()).collect(Collectors.toList());
+
+
+
+
+
+
+
+
 }
