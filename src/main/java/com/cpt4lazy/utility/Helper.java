@@ -32,6 +32,7 @@ public class Helper<T>{
             e.printStackTrace();
         }
         catch (ParseException e) {
+            System.out.println("Parsing error: ");
             e.printStackTrace();
         }
 

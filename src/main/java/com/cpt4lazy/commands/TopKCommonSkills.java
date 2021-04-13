@@ -31,6 +31,7 @@ public final class TopKCommonSkills implements Runnable{
         List<String> commonSkills = FunctionalUtils.commonJobSeekerSkills.apply(users,top);
 
         if (verbose) {
+            System.out.println("The top " + top + " common skills of MIU COMPRO students are:");
             helper.prettyPrint(commonSkills);
         }
     }
