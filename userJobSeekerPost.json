@@ -27,6 +27,18 @@
 					"fromDate": "2017-01-20",
 					"toDate": "2018-12-25"
 				}
+			],
+			"jobsApplied": [
+				{
+					"jobID": " 1",
+					"jobTitle": "software engineer",
+					"place": " "
+				},
+				{
+					"jobID": " 2",
+					"jobTitle": "Computer engineer",
+					"place": " "
+				}
 			]
 		}
 	},
@@ -45,7 +57,7 @@
 				"Java",
 				"Springboot",
 				"React Js",
-				"SQL",
+				"SQL"
 			],
 			"experience": [
 				{

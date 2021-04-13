@@ -14,7 +14,7 @@ import java.util.Optional;
 
 public class FunctionalUtilsTest {
 
-    private final String FILENAME1 = "user.json";
+    private final String FILENAME1 = "userJobSeekerPost.json";
 
     JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(FILENAME1);
     List<User> users = Helper.parseJson(jsonArr.toJSONString());
