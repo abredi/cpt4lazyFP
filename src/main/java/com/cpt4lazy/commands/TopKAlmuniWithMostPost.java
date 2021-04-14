@@ -6,11 +6,13 @@ import com.cpt4lazy.utility.Helper;
 import org.json.simple.JSONArray;
 import picocli.CommandLine;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
-@CommandLine.Command(name = "topKJobsApplied", description = "Top K jobs, which applied by job seekers",
+@CommandLine.Command(name = "topKAlmuniWithMostPost", description = "Top K Almuni, who post the most jobs and referral",
         mixinStandardHelpOptions = true)
-public final class TopKJobsApplied implements Runnable{
+public final class TopKAlmuniWithMostPost implements Runnable{
 
     Helper helper = new Helper();
 
@@ -27,10 +29,10 @@ public final class TopKJobsApplied implements Runnable{
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
-        List<String> commonSkills = FunctionalUtils.topJobsApplied.apply(users,top);
+        Map<String,Integer> commonSkills = FunctionalUtils.topAlmuniwithMostPosts.apply(users,top);
 
         if (verbose) {
-            helper.prettyPrint(commonSkills);
+            helper.prettyPrint(Collections.singletonList(commonSkills));
         }
     }
 }

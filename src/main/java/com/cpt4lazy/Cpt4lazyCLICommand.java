@@ -7,8 +7,8 @@ import picocli.CommandLine.Option;
 
 
 @Command(name = "cpt4lazyCLI", description = "...",
-        mixinStandardHelpOptions = true, subcommands = {AlumniWithMostRequestAccepted.class, AlumniWithMostRequestRejected.class, TopKCommonSkills.class, TopKJobsApplied.class, TopKCityofSoftwareJob.class
-})
+        mixinStandardHelpOptions = true, subcommands = {AlumniWithMostRequestAccepted.class, AlumniWithMostRequestRejected.class, TopKCommonSkills.class, TopKJobsApplied.class, TopKCityofSoftwareJob.class,
+        TopKAlmuniWithMostPost.class})
 public class Cpt4lazyCLICommand implements Runnable {
 
     @Option(names = {"-v", "--verbose"}, description = "...")
