@@ -6,6 +6,7 @@ import com.cpt4lazy.utility.Helper;
 import org.json.simple.JSONArray;
 import picocli.CommandLine;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,10 +28,17 @@ public final class AlumniWithMostRequestRejected implements Runnable{
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
-        List<String> alumniName = FunctionalUtils.alumniWithMostRequestRejected.apply(users,top);
+        List<String> alumniName = new ArrayList<>();
+        try{
+            alumniName = FunctionalUtils.alumniWithMostRequestRejected.apply(users,top);
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("You try to input a negative integer value. Please retry again.");
+            return;
+        }
 
         if (verbose) {
-            System.out.println("The top " + top + " Alumni with most referral requests rejected are:");
+            System.out.println("The top " + top + " Alumni with most referral requests rejected are: \n");
             helper.prettyPrint(alumniName);
         }
     }
