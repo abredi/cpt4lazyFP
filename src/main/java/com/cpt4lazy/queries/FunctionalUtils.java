@@ -3,10 +3,7 @@ package com.cpt4lazy.queries;
 import com.cpt4lazy.model.*;
 
 import java.security.cert.CollectionCertStoreParameters;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.IntFunction;
@@ -102,6 +99,7 @@ public abstract class FunctionalUtils {
 
     /**
      * @author Amanuel E.Chorito
+     * Top Jobs Applied
      */
     public static BiFunction<List<User>,Integer,List<String>>topJobsApplied=(jobs,k)->
                 Optional.ofNullable(jobs).orElse(List.of()).stream()
@@ -111,6 +109,49 @@ public abstract class FunctionalUtils {
                 .collect(Collectors.groupingBy(Job::getJobTitle))
                 .entrySet().stream()
                 .sorted((t1,t2)->t2.getValue().size() -t1.getValue().size())
-                .limit(k).map(n->n.getKey()).collect(Collectors.toList());
+                .limit(k!=null&&k>0?k:0).map(n->n.getKey()).collect(Collectors.toList());
+
+
+    /**
+     * @author Amanuel E.Chorito
+     * top City of Software Jobs Applied
+     */
+
+    public static BiFunction<List<User>,Integer, Map<String,Integer>>topCityofSoftwareJobs=(jobs, k)->
+            Optional.ofNullable(jobs).orElse(List.of()).stream()
+            .filter(r->r.getRole() instanceof JobSeeker)
+            .map(s->(JobSeeker)s.getRole())
+            .flatMap(t-> Optional.ofNullable(t.getJobsApplied()).orElse(List.of()).stream())
+            .collect(Collectors.groupingBy(Job::getPlace))
+            .entrySet().stream()
+            .collect(Collectors.toMap(entry->entry.getKey(), entry->entry.getValue().size()))
+            .entrySet().stream()
+            .sorted((c1,c2)->c2.getValue()-c1.getValue())
+            .limit(k!=null&&k>0?k:0).collect(Collectors.toMap(Map.Entry::getKey,entry->entry.getValue()));
+
+    /**
+     * @author Amanuel E.Chorito
+     * top Almuni who post the most jobs and referrral
+     */
+
+
+    public static  BiFunction<List<User>, Integer, Map<String,Integer>>topAlmuniwithMostPosts=(user,k)->
+
+            Optional.ofNullable(user).orElse(List.of()).stream()
+            .filter(r->r.getRole() instanceof Alumni)
+            .map(s->(Alumni)s.getRole())
+            .filter(t->(t.getPost() != null))
+            .sorted((a1,a2)->(a2.getPost().size())-a1.getPost().size())
+            .limit(k!=null&&k>0?k:0)
+            .collect(Collectors.toMap(Alumni::getName,entry->entry.getPost().size()));
+
+
+
+
+
+
+
+
+
 
 }

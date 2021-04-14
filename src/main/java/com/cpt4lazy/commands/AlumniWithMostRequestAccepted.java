@@ -45,7 +45,6 @@ final public class AlumniWithMostRequestAccepted implements Runnable{
         }
 
         if (verbose) {
-            System.out.println("The top " + top + " Alumni with most referral requests accepted are:");
             helper.prettyPrint(alumniName);
         }
     }
