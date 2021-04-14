@@ -52,12 +52,12 @@ public abstract class FunctionalUtils {
     public static BiFunction<List<User>, Integer, List<String>> alumniWithMostRequestAccepted = (user, k) ->
             referralRequests.apply(user).stream()
                     .filter(r -> r.getRefStatus().equals("Accepted"))
-                    .collect(Collectors.groupingBy(r -> r.getPostedBy()))
+                    .collect(Collectors.groupingBy(Request::getPostedBy))
                     .entrySet()
                     .stream()
                     .sorted((a1,a2) -> a2.getValue().size() - a1.getValue().size())
                     .limit(k)
-                    .map(a -> a.getKey())
+                    .map(Map.Entry::getKey)
                     .collect(Collectors.toList());
 
     /**
@@ -66,12 +66,12 @@ public abstract class FunctionalUtils {
     public static BiFunction<List<User>, Integer, List<String>> alumniWithMostRequestRejected = (user, k) ->
             referralRequests.apply(user).stream()
                     .filter(r -> r.getRefStatus().equals("Rejected"))
-                    .collect(Collectors.groupingBy(r -> r.getPostedBy()))
+                    .collect(Collectors.groupingBy(Request::getPostedBy))
                     .entrySet()
                     .stream()
                     .sorted((a1,a2) -> a2.getValue().size() - a1.getValue().size())
                     .limit(k)
-                    .map(a -> a.getKey())
+                    .map(Map.Entry::getKey)
                     .collect(Collectors.toList());
     /**
      * @author Carl Mapada
@@ -84,7 +84,7 @@ public abstract class FunctionalUtils {
                     .stream()
                     .sorted((s1, s2) -> (int)(s2.getValue() - s1.getValue()))
                     .limit(k)
-                    .map(s -> s.getKey())
+                    .map(Map.Entry::getKey)
                     .collect(Collectors.toList());
 
 
