@@ -1,0 +1,675 @@
+[
+	{
+		"email": "cmapada@miu.edu",
+		"password": "password1",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Carl Mapada",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Boston, MA",
+			"roleName": "STUDENT",
+			"preferredJob": "Machine Learning Engineer",
+			"preferredCompany": "Google",
+			"skills": [
+				"Java",
+				"Springboot",
+				"Python",
+				"Microsoft .NET",
+				"SQL",
+				"Azure",
+				"Terraform",
+				"Git",
+				"MongoDB"
+			],
+			"experience": [
+				{
+					"company": "NCR",
+					"position": "Firmware Engineer",
+					"responsibility": "Create code for Fastlane",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				},
+				{
+					"company": "Accenture",
+					"position": "Team Lead",
+					"responsibility": "Manage a team of software developers",
+					"fromDate": "2018-02-20",
+					"toDate": "2019-10-18"
+				}
+			],
+			"referralRequest": [
+				{
+					"refStatus": "Accepted",
+					"reqDate": "2021-04-05",
+					"postedBy": "Nicolas Cage",
+					"requestSentBy": "Carl Mapada"
+				},
+				{
+					"refStatus": "Rejected",
+					"reqDate": "2021-04-08",
+					"postedBy": "Sharon Stone",
+					"requestSentBy": "Carl Mapada"
+				},
+				{
+					"refStatus": "Rejected",
+					"reqDate": "2021-04-11",
+					"postedBy": "Jack Ryan",
+					"requestSentBy": "Carl Mapada"
+				}
+			],
+			"jobsApplied": [
+				{
+					"jobID": " 1",
+					"jobTitle": "software engineer",
+					"place": "Chicago "
+				},
+				{
+					"jobID": " 2",
+					"jobTitle": "Computer engineer",
+					"place": "New York"
+				}
+			]
+		}
+	},
+	{
+		"email": "achorito@miu.edu",
+		"password": "password2",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Amanuel Chorito",
+			"telephoneNumber": "+1 412-452-8545",
+			"address": "Chicago, IL",
+			"roleName": "STUDENT",
+			"preferredJob": "Frontend Developer",
+			"preferredCompany": "Apple",
+			"skills": [
+				"Java",
+				"Springboot",
+				"React Js",
+				"SQL",
+				"Git"
+			],
+			"experience": [
+				{
+					"company": "ITransition",
+					"position": "Software Engineer",
+					"responsibility": "Test Software",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				}
+			],
+			"referralRequest": []
+		}
+	},
+	{
+		"email": "arali@miu.edu",
+		"password": "password3",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Abdulaziz Ali",
+			"telephoneNumber": "+1 412-452-2354",
+			"address": "New York, NY",
+			"roleName": "STUDENT",
+			"preferredJob": "Software Engineer",
+			"preferredCompany": "Microsoft",
+			"skills": [
+				"Java",
+				"Springboot",
+				"React Js",
+				"SQL",
+				"Git",
+				"Docker"
+			],
+			"experience": [
+				{
+					"company": "SideBench",
+					"position": "Software Engineer",
+					"responsibility": "Test Software",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				}
+			],
+			"referralRequest": [
+				{
+					"refStatus": "Rejected",
+					"reqDate": "2021-04-11",
+					"postedBy": "Nicolas Cage",
+					"requestSentBy": "Abdulaziz Ali"
+				}
+			]
+		}
+	},
+	{
+		"email": "ayimam@miu.edu",
+		"password": "password4",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Haymanot Yimam",
+			"telephoneNumber": "+1 412-452-9654",
+			"address": "Los Angeles, CA",
+			"roleName": "STUDENT",
+			"preferredJob": "Software Engineer",
+			"preferredCompany": "Amazon",
+			"skills": [
+				"Java",
+				"Springboot",
+				"React Js",
+				"SQL",
+				"Cryptography",
+				"MongoDB"
+			],
+			"experience": [
+				{
+					"company": "Syberry",
+					"position": "Software Engineer",
+					"responsibility": "Test Software",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				}
+			],
+			"referralRequest": [
+				{
+					"refStatus": "Accepted",
+					"reqDate": "2021-04-11",
+					"postedBy": "Nicolas Cage",
+					"requestSentBy": "Haymanot Yimam"
+				},
+				{
+					"refStatus": "Rejected",
+					"reqDate": "2021-04-11",
+					"postedBy": "Sharon Stone",
+					"requestSentBy": "Haymanot Yimam"
+				}
+			]
+		}
+	},
+	{
+		"email": "ja.elleuchy@miu.edu",
+		"password": "password5",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Jawaher Elleuchy",
+			"telephoneNumber": "+1 412-452-3654",
+			"address": "Seattle, WA",
+			"roleName": "STUDENT",
+			"preferredJob": "Software Developer",
+			"preferredCompany": "Microsoft",
+			"skills": [
+				"Java",
+				"React Js",
+				"SQL",
+				"MongoDB"
+			],
+			"experience": [
+				{
+					"company": "A3Logics",
+					"position": "Software Engineer",
+					"responsibility": "Test Software",
+					"fromDate": "2017-01-20",
+					"toDate": "2018-12-25"
+				}
+			],
+			"referralRequest": []
+		}
+	},
+	{
+		"email": "ehalley@miu.edu",
+		"password": "password17",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Edmond Halley",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Los Angeles, CA",
+			"roleName": "STUDENT",
+			"preferredJob": "Test Engineer",
+			"preferredCompany": "Google",
+			"skills": [
+				"Java",
+				"Springboot",
+				"Selenium"
+			],
+			"experience": [
+				{
+					"company": "App Maister",
+					"position": "Test Engineer",
+					"responsibility": "Create Test Automation Scripts",
+					"fromDate": "2016-05-20",
+					"toDate": "2017-10-25"
+				}
+			],
+			"referralRequest": [
+				{
+					"refStatus": "New",
+					"reqDate": "2021-03-11",
+					"postedBy": "Melissa Franklin",
+					"requestSentBy": "Edmond Halley"
+				},
+				{
+					"refStatus": "Rejected",
+					"reqDate": "2021-03-12",
+					"postedBy": "Max Planck",
+					"requestSentBy": "Edmond Halley"
+				},
+				{
+					"refStatus": "Rejected",
+					"reqDate": "2021-04-11",
+					"postedBy": "Lord Kelvin",
+					"requestSentBy": "Edmond Halley"
+				}
+			]
+		}
+	},
+	{
+		"email": "sboysen@miu.edu",
+		"password": "password18",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Sarah Boysen",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Boston, MA",
+			"roleName": "STUDENT",
+			"preferredJob": "Frontend Developer",
+			"preferredCompany": "Apple",
+			"skills": [
+				"Java",
+				"Springboot",
+				"ReactJs",
+				"VueJs"
+			],
+			"experience": [
+				{
+					"company": "A3Logic",
+					"position": "Frontend Developer",
+					"responsibility": "Develop Frontend UI using React or Vue js",
+					"fromDate": "2016-05-20",
+					"toDate": "2017-10-25"
+				}
+			],
+			"referralRequest": [
+				{
+					"refStatus": "Accepted",
+					"reqDate": "2021-03-11",
+					"postedBy": "Max Planck",
+					"requestSentBy": "Sarah Boysen"
+				},
+				{
+					"refStatus": "Rejected",
+					"reqDate": "2021-03-12",
+					"postedBy": "Melissa Franklin",
+					"requestSentBy": "Sarah Boysen"
+				}
+			]
+		}
+	},
+	{
+		"email": "jkepler@miu.edu",
+		"password": "password19",
+		"role": {
+			"type": "com.cpt4lazy.model.JobSeeker",
+			"name": "Johannes Kepler",
+			"telephoneNumber": "+1 896-452-6235",
+			"address": "Seattle, WA",
+			"roleName": "STUDENT",
+			"preferredJob": "Frontend Developer",
+			"preferredCompany": "Amazon",
+			"skills": [
+				"Java",
+				"Springboot",
+				"AWS"
+			],
+			"experience": [
+				{
+					"company": "A3Logic",
+					"position": "Backend Developer",
+					"responsibility": "Develop Backend business logic using Spring Boot",
+					"fromDate": "2017-08-20",
+					"toDate": "2018-10-25"
+				}
+			],
+			"referralRequest": [
+				{
+					"refStatus": "New",
+					"reqDate": "2021-03-14",
+					"postedBy": "Max Planck",
+					"requestSentBy": "Johannes Kepler"
+				},
+				{
+					"refStatus": "New",
+					"reqDate": "2021-03-13",
+					"postedBy": "Melissa Franklin",
+					"requestSentBy": "Johannes Kepler"
+				}
+			]
+		}
+	},
+	{
+		"email": "tcruise@email.com",
+		"password": "password6",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Tom Cruise",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "New York, NY",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Engineer",
+			"currentCompany": "Bank of America"
+		}
+	},
+	{
+		"email": "ncagee@email.com",
+		"password": "password7",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Nicolas Cage",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Los Angeles, CA",
+			"roleName": "ALUMNI",
+			"currentJob": "Technical Architect",
+			"currentCompany": "NetGuru",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "My company is looking for a Software Engineer",
+					"description": "This is a referral post",
+					"requests": [
+						{
+							"refStatus": "Accepted",
+							"reqDate": "2021-04-11",
+							"postedBy": "Nicolas Cage",
+							"requestSentBy": "Haymanot Yimam"
+						},
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Nicolas Cage",
+							"requestSentBy": "Abdulaziz Ali"
+						},
+						{
+							"refStatus": "Accepted",
+							"reqDate": "2021-04-11",
+							"postedBy": "Nicolas Cage",
+							"requestSentBy": "Carl Mapada"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"email": "janiston@email.com",
+		"password": "password8",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Jennifer Aniston",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Minneapolis, MN",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Engineer",
+			"currentCompany": "Bank of America"
+		}
+	},
+	{
+		"email": "sstone@email.com",
+		"password": "password9",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Sharon Stone",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Las Vegas, NV",
+			"roleName": "ALUMNI",
+			"currentJob": "Software Engineer",
+			"currentCompany": "Dreamztech Solution",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "My company is looking for a Software Engineer",
+					"description": "This is a referral post",
+					"requests": [
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Sharon Stone",
+							"requestSentBy": "Haymanot Yimam"
+						},
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Sharon Stone",
+							"requestSentBy": "Carl Mapada"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"email": "jryan@email.com",
+		"password": "password10",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Jack Ryan",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Fairfield, IA",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Engineer",
+			"currentCompany": "Liventus",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "My company is looking for a Software Engineer",
+					"description": "This is a referral post",
+					"requests": [
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Jack Ryan",
+							"requestSentBy": "Carl Mapada"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"email": "auria@email.com",
+		"password": "password11",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Adriana C. Ocampo Uria",
+			"telephoneNumber": "+1 562-452-6235",
+			"address": "Los Angeles, CA",
+			"roleName": "ALUMNI",
+			"currentJob": "Software Manager",
+			"currentCompany": "Goji Labs",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "My company is looking for a Software Engineer",
+					"description": "This is a referral post",
+					"requests": [
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Adriana C. Ocampo Uria",
+							"requestSentBy": "Carl Mapada"
+						}
+					]
+				},
+				{
+					"type": "com.cpt4lazy.model.JobLink",
+					"postText": "Hi MIU Compro. Please check this link.",
+					"url": "https://www.indeed.com/jobs?q=software%20engineer&l=Los%20Angeles&advn=8295759579475621&vjk=4b1c900a41243149"
+				}
+			]
+		}
+	},
+	{
+		"email": "cswu@email.com",
+		"password": "password12",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Chien-Shiung Wu",
+			"telephoneNumber": "+1 562-587-6235",
+			"address": "Los Angeles, CA",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Test Engineer",
+			"currentCompany": "Goji Labs",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobLink",
+					"postText": "Anyone looking for internship. Please check thi out",
+					"url": "https://www.monster.com/jobs/search?q=Test+Engineer&where=Los+Angeles+County%2C+CA"
+				}
+			]
+		}
+	},
+	{
+		"email": "lkelvin@email.com",
+		"password": "password13",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Lord Kelvin",
+			"telephoneNumber": "+1 412-678-6235",
+			"address": "Pasadena, CA",
+			"roleName": "ALUMNI",
+			"currentJob": "Software Engineer",
+			"currentCompany": "Archer Software",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "I'm accepting referral request.",
+					"description": "This is a referral post",
+					"requests": [
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-04-11",
+							"postedBy": "Lord Kelvin",
+							"requestSentBy": "Edmond Halley"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"email": "mplanck@email.com",
+		"password": "password14",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Max Planck",
+			"telephoneNumber": "+1 345-452-6235",
+			"address": "Orlando, FL",
+			"roleName": "ALUMNI",
+			"currentJob": "Solutions Engineer",
+			"currentCompany": "Simform",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "Good day lazy MIU Compro Students",
+					"description": "Simform is accepting referral.",
+					"requests": [
+						{
+							"refStatus": "Accepted",
+							"reqDate": "2021-03-11",
+							"postedBy": "Max Planck",
+							"requestSentBy": "Sarah Boysen"
+						},
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-03-12",
+							"postedBy": "Max Planck",
+							"requestSentBy": "Edmond Halley"
+						},
+						{
+							"refStatus": "New",
+							"reqDate": "2021-03-14",
+							"postedBy": "Max Planck",
+							"requestSentBy": "Johannes Kepler"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"email": "mfranklin@email.com",
+		"password": "password15",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Melissa Franklin",
+			"telephoneNumber": "+1 312-452-6235",
+			"address": "Chicago, IL",
+			"roleName": "ALUMNI",
+			"currentJob": "Software Test Lead",
+			"currentCompany": "Slingshot",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobReferral",
+					"postText": "My company is looking for a Software Engineer",
+					"description": "This is a referral post",
+					"requests": [
+						{
+							"refStatus": "New",
+							"reqDate": "2021-03-11",
+							"postedBy": "Melissa Franklin",
+							"requestSentBy": "Edmond Halley"
+						},
+						{
+							"refStatus": "New",
+							"reqDate": "2021-03-12",
+							"postedBy": "Melissa Franklin",
+							"requestSentBy": "Sarah Boysen"
+						},
+						{
+							"refStatus": "New",
+							"reqDate": "2021-03-13",
+							"postedBy": "Melissa Franklin",
+							"requestSentBy": "Johannes Kepler"
+						},
+						{
+							"refStatus": "Rejected",
+							"reqDate": "2021-03-14",
+							"postedBy": "Melissa Franklin",
+							"requestSentBy": ""
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+		"email": "pgrakik@email.com",
+		"password": "password16",
+		"role": {
+			"type": "com.cpt4lazy.model.Alumni",
+			"name": "Patricia S. Goldman-Rakic",
+			"telephoneNumber": "+1 412-452-6235",
+			"address": "Chicago, IL",
+			"roleName": "ALUMNI",
+			"currentJob": "Senior Software Engineer",
+			"currentCompany": "Wizom",
+			"post": [
+				{
+					"type": "com.cpt4lazy.model.JobLink",
+					"postText": "Please check thi out",
+					"url": "https://www.glassdoor.com/Job/chicago-software-engineer-jobs-SRCH_IL.0,7_IC1128808_KO8,25.htm"
+				},
+				{
+					"type": "com.cpt4lazy.model.JobLink",
+					"postText": "To all lazy people.",
+					"url": "https://www.linkedin.com/jobs/software-engineer-jobs-chicago-il?position=1&pageNum=0"
+				},
+				{
+					"type": "com.cpt4lazy.model.JobLink",
+					"postText": "Good morning. Job opening here.",
+					"url": "https://www.linkedin.com/jobs/view/software-engineer-at-braintree-2463023734"
+				},
+				{
+					"type": "com.cpt4lazy.model.JobLink",
+					"postText": "You may now apply here.",
+					"url": "https://www.ziprecruiter.com/Jobs/Software-Developer/-in-Chicago,IL"
+				}
+			]
+		}
+	}
+]
