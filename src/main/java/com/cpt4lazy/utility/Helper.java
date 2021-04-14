@@ -26,12 +26,14 @@ public class Helper<T>{
             return jsonParser.parse(reader);
         }
         catch(FileNotFoundException e){
+            System.out.println("File not Found: ");
             e.printStackTrace();
         }
         catch(IOException e){
             e.printStackTrace();
         }
         catch (ParseException e) {
+            System.out.println("Parsing error: ");
             e.printStackTrace();
         }
 
