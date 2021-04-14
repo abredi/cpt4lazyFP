@@ -12,7 +12,7 @@ import java.util.Map;
 
 @CommandLine.Command(name = "topKAlmuniWithMostPost", description = "Top K Almuni, who post the most jobs and referral",
         mixinStandardHelpOptions = true)
-public final class TopKAlmuniWithMostPost implements Runnable{
+public final class TopKAlmuniWithMostPost implements Runnable {
 
     Helper helper = new Helper();
 
@@ -29,11 +29,14 @@ public final class TopKAlmuniWithMostPost implements Runnable{
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
-        Map<String,Integer> commonSkills = FunctionalUtils.topAlmuniwithMostPosts.apply(users,top);
+        if (top > 0) {
+            Map<String, Integer> commonSkills = FunctionalUtils.topAlmuniwithMostPosts.apply(users, top);
 
-        if (verbose) {
-            System.out.println("The top " + top + " Alumni with the most Post:");
-            helper.prettyPrint(Collections.singletonList(commonSkills));
+            if (verbose) {
+                System.out.println("The top " + top + " Alumni with the most Post:");
+                helper.prettyPrint(Collections.singletonList(commonSkills));
+            }
         }
+        System.out.println("Not a number");
     }
 }

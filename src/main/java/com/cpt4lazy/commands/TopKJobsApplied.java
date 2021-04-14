@@ -27,11 +27,14 @@ public final class TopKJobsApplied implements Runnable{
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
-        List<String> commonSkills = FunctionalUtils.topJobsApplied.apply(users,top);
+        if (top > 0) {
+            List<String> commonSkills = FunctionalUtils.topJobsApplied.apply(users, top);
 
-        if (verbose) {
-            System.out.println("The top " + top + " Jobs, which applied by job seekers:");
-            helper.prettyPrint(commonSkills);
+            if (verbose) {
+                System.out.println("The top " + top + " Jobs, which applied by job seekers:");
+                helper.prettyPrint(commonSkills);
+            }
         }
+        System.out.println("Not anumber");
     }
 }

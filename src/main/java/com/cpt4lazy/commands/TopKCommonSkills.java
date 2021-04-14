@@ -28,6 +28,7 @@ public final class TopKCommonSkills implements Runnable{
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
+
         List<String> commonSkills = FunctionalUtils.commonJobSeekerSkills.apply(users,top);
 
         if (verbose) {

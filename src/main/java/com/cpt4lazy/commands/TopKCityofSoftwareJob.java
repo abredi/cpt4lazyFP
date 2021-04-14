@@ -29,11 +29,14 @@ public final class TopKCityofSoftwareJob implements Runnable{
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
-        Map<String, Integer> commonSkills = FunctionalUtils.topCityofSoftwareJobs.apply(users,top);
+        if (top > 0) {
+            Map<String, Integer> commonSkills = FunctionalUtils.topCityofSoftwareJobs.apply(users, top);
 
-        if (verbose) {
-            System.out.println("The top " + top + " city of Software jobs Applied:");
-            helper.prettyPrint(Collections.singletonList(commonSkills));
+            if (verbose) {
+                System.out.println("The top " + top + " city of Software jobs Applied:");
+                helper.prettyPrint(Collections.singletonList(commonSkills));
+            }
         }
+        System.out.println("Not a number");
     }
 }
