@@ -55,4 +55,14 @@ public class Request {
     public void setRequestSentBy(String requestSentBy) {
         this.requestSentBy = requestSentBy;
     }
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "refStatus='" + refStatus + '\'' +
+                ", reqDate=" + reqDate +
+                ", postedBy='" + postedBy + '\'' +
+                ", requestSentBy='" + requestSentBy + '\'' +
+                '}';
+    }
 }

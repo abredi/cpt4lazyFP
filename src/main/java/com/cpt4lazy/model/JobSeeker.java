@@ -9,24 +9,36 @@ public class JobSeeker extends UserRole {
     private List<String> skills;
     private List<Experience> experience;
     private List<Request> referralRequest;
+    private List<Job> jobsApplied;
 
     public JobSeeker(){}
 
-    public JobSeeker(String preferredJob, String preferredCompany, List<String> skills, List<Experience> experience, List<Request> referralRequest) {
-        this.preferredJob = preferredJob;
-        this.preferredCompany = preferredCompany;
-        this.skills = skills;
-        this.experience = experience;
-        this.referralRequest = referralRequest;
-    }
+//    public JobSeeker(String preferredJob, String preferredCompany, List<String> skills, List<Experience> experience, List<Request> referralRequest) {
+//        this.preferredJob = preferredJob;
+//        this.preferredCompany = preferredCompany;
+//        this.skills = skills;
+//        this.experience = experience;
+//        this.referralRequest = referralRequest;
+//    }
+//
+//    public JobSeeker(String name, String telephoneNumber, String address, String roleName, String preferredJob, String preferredCompany, List<String> skills, List<Experience> experience, List<Request> referralRequest) {
+//        super(name, telephoneNumber, address, roleName);
+//        this.preferredJob = preferredJob;
+//        this.preferredCompany = preferredCompany;
+//        this.skills = skills;
+//        this.experience = experience;
+//        this.referralRequest = referralRequest;
+//        this.jobsApplied = jobsApplied;
+//    }
 
-    public JobSeeker(String name, String telephoneNumber, String address, String roleName, String preferredJob, String preferredCompany, List<String> skills, List<Experience> experience, List<Request> referralRequest) {
+    public JobSeeker(String name, String telephoneNumber, String address, String roleName, String preferredJob, String preferredCompany, List<String> skills, List<Experience> experience, List<Request> referralRequest, List<Job> jobsApplied) {
         super(name, telephoneNumber, address, roleName);
         this.preferredJob = preferredJob;
         this.preferredCompany = preferredCompany;
         this.skills = skills;
         this.experience = experience;
         this.referralRequest = referralRequest;
+        this.jobsApplied = jobsApplied;
     }
 
     public String getPreferredJob() {
@@ -69,14 +81,23 @@ public class JobSeeker extends UserRole {
         this.referralRequest = referralRequest;
     }
 
+    public List<Job> getJobsApplied() {
+        return jobsApplied;
+    }
+
+    public void setJobsApplied(List<Job> jobsApplied) {
+        this.jobsApplied = jobsApplied;
+    }
+
     @Override
     public String toString() {
         return "JobSeeker{" +
                 "preferredJob='" + preferredJob + '\'' +
                 ", preferredCompany='" + preferredCompany + '\'' +
-                ", skills='" + skills + '\'' +
+                ", skills=" + skills +
                 ", experience=" + experience +
                 ", referralRequest=" + referralRequest +
+                ", jobsApplied=" + jobsApplied +
                 '}';
     }
 }

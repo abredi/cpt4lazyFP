@@ -56,6 +56,18 @@
 					"postedBy": "Jack Ryan",
 					"requestSentBy": "Carl Mapada"
 				}
+			],
+			"jobsApplied": [
+				{
+					"jobID": " 1",
+					"jobTitle": "software engineer",
+					"place": "Chicago "
+				},
+				{
+					"jobID": " 2",
+					"jobTitle": "Computer engineer",
+					"place": "New York"
+				}
 			]
 		}
 	},
@@ -437,7 +449,7 @@
 			"type": "com.cpt4lazy.model.Alumni",
 			"name": "Jack Ryan",
 			"telephoneNumber": "+1 412-452-6235",
-			"address": "Fairfiled, IA",
+			"address": "Fairfield, IA",
 			"roleName": "ALUMNI",
 			"currentJob": "Senior Software Engineer",
 			"currentCompany": "Liventus",

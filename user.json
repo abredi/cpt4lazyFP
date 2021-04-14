@@ -45,7 +45,7 @@
 				"Java",
 				"Springboot",
 				"React Js",
-				"SQL",
+				"SQL"
 			],
 			"experience": [
 				{
@@ -131,7 +131,7 @@
 			"type": "com.cpt4lazy.model.Alumni",
 			"name": "Tom Cruise",
 			"telephoneNumber": "+1 412-452-6235",
-			"address": "New York",
+			"address": "New York, NY",
 			"roleName": "ALUMNI",
 			"currentJob": "Senior Software Engineer",
 			"currentCompany": "Bank of America"
@@ -144,7 +144,7 @@
 			"type": "com.cpt4lazy.model.Alumni",
 			"name": "Nicolas Cage",
 			"telephoneNumber": "+1 412-452-6235",
-			"address": "California",
+			"address": "Los Angeles, CA",
 			"roleName": "ALUMNI",
 			"currentJob": "Senior Software Engineer",
 			"currentCompany": "Bank of America",
@@ -184,7 +184,7 @@
 			"type": "com.cpt4lazy.model.Alumni",
 			"name": "Jennifer Aniston",
 			"telephoneNumber": "+1 412-452-6235",
-			"address": "Minneapolis",
+			"address": "Minneapolis, MN",
 			"roleName": "ALUMNI",
 			"currentJob": "Senior Software Engineer",
 			"currentCompany": "Bank of America"
@@ -197,7 +197,7 @@
 			"type": "com.cpt4lazy.model.Alumni",
 			"name": "Sharon Stone",
 			"telephoneNumber": "+1 412-452-6235",
-			"address": "Nevada",
+			"address": "Las Vegas, NV",
 			"roleName": "ALUMNI",
 			"currentJob": "Senior Software Engineer",
 			"currentCompany": "Bank of America",
@@ -231,7 +231,7 @@
 			"type": "com.cpt4lazy.model.Alumni",
 			"name": "Jack Ryan",
 			"telephoneNumber": "+1 412-452-6235",
-			"address": "Iowa",
+			"address": "Fairfield, IA",
 			"roleName": "ALUMNI",
 			"currentJob": "Senior Software Engineer",
 			"currentCompany": "Bank of America",
