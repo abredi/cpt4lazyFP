@@ -99,6 +99,7 @@ public abstract class FunctionalUtils {
 
     /**
      * @author Amanuel E.Chorito
+     * Top Jobs Applied
      */
     public static BiFunction<List<User>,Integer,List<String>>topJobsApplied=(jobs,k)->
                 Optional.ofNullable(jobs).orElse(List.of()).stream()
@@ -108,7 +109,7 @@ public abstract class FunctionalUtils {
                 .collect(Collectors.groupingBy(Job::getJobTitle))
                 .entrySet().stream()
                 .sorted((t1,t2)->t2.getValue().size() -t1.getValue().size())
-                .limit(k).map(n->n.getKey()).collect(Collectors.toList());
+                .limit(k!=null&&k>0?k:0).map(n->n.getKey()).collect(Collectors.toList());
 
 
     /**
@@ -126,7 +127,7 @@ public abstract class FunctionalUtils {
             .collect(Collectors.toMap(entry->entry.getKey(), entry->entry.getValue().size()))
             .entrySet().stream()
             .sorted((c1,c2)->c2.getValue()-c1.getValue())
-            .limit(k).collect(Collectors.toMap(Map.Entry::getKey,entry->entry.getValue()));
+            .limit(k!=null&&k>0?k:0).collect(Collectors.toMap(Map.Entry::getKey,entry->entry.getValue()));
 
     /**
      * @author Amanuel E.Chorito
@@ -141,7 +142,7 @@ public abstract class FunctionalUtils {
             .map(s->(Alumni)s.getRole())
             .filter(t->(t.getPost() != null))
             .sorted((a1,a2)->(a2.getPost().size())-a1.getPost().size())
-            .limit(k)
+            .limit(k!=null&&k>0?k:0)
             .collect(Collectors.toMap(Alumni::getName,entry->entry.getPost().size()));
 
 

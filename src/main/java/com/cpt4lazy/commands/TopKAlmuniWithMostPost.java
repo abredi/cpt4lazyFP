@@ -29,14 +29,13 @@ public final class TopKAlmuniWithMostPost implements Runnable {
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
-        if (top > 0) {
+
             Map<String, Integer> commonSkills = FunctionalUtils.topAlmuniwithMostPosts.apply(users, top);
 
             if (verbose) {
                 System.out.println("The top " + top + " Alumni with the most Post:");
                 helper.prettyPrint(Collections.singletonList(commonSkills));
             }
-        }
-        System.out.println("Not a number");
+
     }
 }

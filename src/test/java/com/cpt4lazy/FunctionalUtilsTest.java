@@ -10,10 +10,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import  java.lang.StringBuilder;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class FunctionalUtilsTest {
 
@@ -26,6 +23,11 @@ public class FunctionalUtilsTest {
     List<String> expected4 = new ArrayList<>(Arrays.asList("MA", "IL", "NY", "CA", "WA"));
     List<User> nullUser = null;
     List<String> expected5 = new ArrayList<>();
+
+    Map<String,Integer>almuniPostExpected= new HashMap<>(){{put("Nicolas Cage",2);put("Sharon Stone" ,1);}};
+    Map<String,Integer>cityExpected= new HashMap<>(){{put("New York",1);put("Chicago" ,1);}};
+    List<String> jobsExpected = new ArrayList<>((Arrays.asList("software engineer", "Computer engineer")));
+    Map<String,Integer>nullMap= new HashMap<>(){};
 
     private final String FILENAME2 = "user.json";
     JSONArray jsonArr2 = (JSONArray) Helper.ReadJSONFile(FILENAME2);
@@ -113,7 +115,75 @@ public class FunctionalUtilsTest {
         //test for users list is null
         Assert.assertEquals(expected5, FunctionalUtils.topKPreferredStateByJobSeeker.apply(nullUser,10));
     }
+    /**
+     * @author Amanuel E.Chorito, TEST start
+     */
+    @Test
+    public void topAlmuniwithMostPosts_NullTest(){
 
 
+        //test for users list is null and no number entered
+        Assert.assertEquals(nullMap, FunctionalUtils.topAlmuniwithMostPosts.apply(nullUser,null));
+    }
+    @Test
+    public void topAlmuniwithMostPosts_negativeValueTest(){
+
+
+        //test for users list is null and no number entered
+        Assert.assertEquals(nullMap, FunctionalUtils.topAlmuniwithMostPosts.apply(nullUser,-1));
+    }
+    @Test
+    public void topAlmuniwithMostPosts_PositiveValueTest(){
+
+
+        //test for users list is null and no number entered
+        Assert.assertEquals(almuniPostExpected, FunctionalUtils.topAlmuniwithMostPosts.apply(users3,2));
+    }
+    @Test
+    public void topCityofSoftwareJobs_NullTest(){
+
+
+        //test for users list is null and no number entered
+        Assert.assertEquals(Map.of(), FunctionalUtils.topCityofSoftwareJobs.apply(nullUser,null));
+    }
+    @Test
+    public void topCityofSoftwareJobs_negativeValueTest(){
+
+
+        //test for users list is null and no number entered
+        Assert.assertEquals(Map.of(), FunctionalUtils.topCityofSoftwareJobs.apply(nullUser,-1));
+    }
+    @Test
+    public void topCityofSoftwareJobs_PositiveValueTest(){
+
+
+        //test for users list is null and no number entered
+        Assert.assertEquals(cityExpected, FunctionalUtils.topCityofSoftwareJobs.apply(users3,2));
+    }
+
+    @Test
+    public void topJobsApplied_NullTest(){
+
+
+        //test for users list is null and no number entered
+        Assert.assertEquals(expected5, FunctionalUtils.topJobsApplied.apply(nullUser,null));
+    }
+    @Test
+    public void topJobsApplied_negativeValueTest(){
+
+
+        //test for users list is null and no number entered
+        Assert.assertEquals(expected5, FunctionalUtils.topJobsApplied.apply(nullUser,-1));
+    }
+    @Test
+    public void topJobsApplied_PositiveValueTest(){
+
+
+        //test for users list is null and no number entered
+        Assert.assertEquals(jobsExpected, FunctionalUtils.topJobsApplied.apply(users3,2));
+    }
+    /**
+     * End of @author Amanuel E.Chorito  TEST
+     */
 
 }
