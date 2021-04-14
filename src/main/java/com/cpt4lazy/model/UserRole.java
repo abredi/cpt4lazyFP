@@ -61,6 +61,8 @@ public abstract class UserRole {
 
     @Override
     public String toString() {
+        StringBuilder s = new StringBuilder();
+
         return "UserRole{" +
                 "name='" + name + '\'' +
                 ", telephoneNumber='" + telephoneNumber + '\'' +
