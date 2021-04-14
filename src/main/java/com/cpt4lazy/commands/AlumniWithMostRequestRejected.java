@@ -30,6 +30,7 @@ public final class AlumniWithMostRequestRejected implements Runnable{
         List<String> alumniName = FunctionalUtils.alumniWithMostRequestRejected.apply(users,top);
 
         if (verbose) {
+            System.out.println("The top " + top + " Alumni with most referral requests rejected are:");
             helper.prettyPrint(alumniName);
         }
     }

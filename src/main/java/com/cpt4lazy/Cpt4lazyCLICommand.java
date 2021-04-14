@@ -3,6 +3,7 @@ package com.cpt4lazy;
 import com.cpt4lazy.commands.AlumniWithMostRequestAccepted;
 import com.cpt4lazy.commands.AlumniWithMostRequestRejected;
 import com.cpt4lazy.commands.TopKCommonSkills;
+import com.cpt4lazy.commands.TopKPreferredStateByJobSeeker;
 import com.cpt4lazy.commands.TopKJobsApplied;
 import io.micronaut.configuration.picocli.PicocliRunner;
 import picocli.CommandLine.Command;
@@ -10,7 +11,8 @@ import picocli.CommandLine.Option;
 
 
 @Command(name = "cpt4lazyCLI", description = "...",
-        mixinStandardHelpOptions = true, subcommands = {AlumniWithMostRequestAccepted.class, AlumniWithMostRequestRejected.class, TopKCommonSkills.class, TopKJobsApplied.class})
+        mixinStandardHelpOptions = true, subcommands = {AlumniWithMostRequestAccepted.class, AlumniWithMostRequestRejected.class,
+        TopKCommonSkills.class, TopKJobsApplied.class,TopKPreferredStateByJobSeeker.class})
 public class Cpt4lazyCLICommand implements Runnable {
 
     @Option(names = {"-v", "--verbose"}, description = "...")

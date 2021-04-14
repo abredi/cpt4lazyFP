@@ -4,19 +4,19 @@ import java.util.List;
 
 public class JobLink extends Post{
 
-    private List<String> url;
+    private String url;
 
     public JobLink(){}
-    public JobLink(String postText, List<String> url) {
+    public JobLink(String postText, String url) {
         super(postText);
         this.url = url;
     }
 
-    public List<String> getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(List<String> url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 }
