@@ -7,6 +7,7 @@ import org.json.simple.JSONArray;
 import picocli.CommandLine;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,11 +31,18 @@ public final class TopKCityofSoftwareJob implements Runnable{
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
 
-            Map<String, Integer> commonSkills = FunctionalUtils.topCityofSoftwareJobs.apply(users, top);
+            Map<String, Integer> topCities;
+try {
+    topCities=FunctionalUtils.topCityofSoftwareJobs.apply(users, top);
+}
+catch (IllegalArgumentException e){
+    System.out.println("You try to input a negative integer value. Please retry again.");
+    return;
 
+}
             if (verbose) {
                 System.out.println("The top " + top + " city of Software jobs Applied:");
-                helper.prettyPrint(Collections.singletonList(commonSkills));
+                helper.prettyPrint(Collections.singletonList(topCities));
             }
 
     }

@@ -7,6 +7,7 @@ import org.json.simple.JSONArray;
 import picocli.CommandLine;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,12 +30,19 @@ public final class TopKAlmuniWithMostPost implements Runnable {
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
+        Map<String, Integer> topAlmuni;
+        try {
+            topAlmuni = FunctionalUtils.topAlmuniwithMostPosts.apply(users, top);
+        }
+           catch (IllegalArgumentException e){
+               System.out.println("You try to input a negative integer value. Please retry again.");
+               return;
 
-            Map<String, Integer> commonSkills = FunctionalUtils.topAlmuniwithMostPosts.apply(users, top);
+           }
 
             if (verbose) {
                 System.out.println("The top " + top + " Alumni with the most Post:");
-                helper.prettyPrint(Collections.singletonList(commonSkills));
+                helper.prettyPrint(Collections.singletonList(topAlmuni));
             }
 
     }

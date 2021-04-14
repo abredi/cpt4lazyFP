@@ -6,6 +6,7 @@ import com.cpt4lazy.utility.Helper;
 import org.json.simple.JSONArray;
 import picocli.CommandLine;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,11 +29,17 @@ public final class TopKCommonSkills implements Runnable{
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
-
-        List<String> commonSkills = FunctionalUtils.commonJobSeekerSkills.apply(users,top);
+        List<String> commonSkills = new ArrayList<>();
+        try{
+            commonSkills = FunctionalUtils.commonJobSeekerSkills.apply(users,top);
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("You try to input a negative integer value. Please retry again.");
+            return;
+        }
 
         if (verbose) {
-            System.out.println("The top " + top + " common skills of MIU COMPRO students are:");
+            System.out.println("The top " + top + " common skills of MIU COMPRO students are:\n");
             helper.prettyPrint(commonSkills);
         }
     }

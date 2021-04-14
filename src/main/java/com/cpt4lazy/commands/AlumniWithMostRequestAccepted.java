@@ -35,7 +35,14 @@ final public class AlumniWithMostRequestAccepted implements Runnable{
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
-        List<String> alumniName = FunctionalUtils.alumniWithMostRequestAccepted.apply(users,top);
+        List<String> alumniName = new ArrayList<>();
+        try{
+            alumniName = FunctionalUtils.alumniWithMostRequestAccepted.apply(users,top);
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("You try to input a negative integer value. Please retry again.");
+            return;
+        }
 
         if (verbose) {
             helper.prettyPrint(alumniName);

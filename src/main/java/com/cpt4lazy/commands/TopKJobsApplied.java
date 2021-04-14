@@ -28,11 +28,18 @@ public final class TopKJobsApplied implements Runnable{
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
 
-            List<String> commonSkills = FunctionalUtils.topJobsApplied.apply(users, top);
+            List<String> topJobs;
+    try{
+        topJobs = FunctionalUtils.topJobsApplied.apply(users, top);
+    }
+    catch (IllegalArgumentException e){
+        System.out.println("You try to input a negative integer value. Please retry again.");
+        return;
 
+    }
             if (verbose) {
                 System.out.println("The top " + top + " Jobs, which applied by job seekers:");
-                helper.prettyPrint(commonSkills);
+                helper.prettyPrint(topJobs);
             }
 
 
