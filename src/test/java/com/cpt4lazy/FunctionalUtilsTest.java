@@ -51,6 +51,10 @@ public class FunctionalUtilsTest {
                                                         "Request{refStatus='Rejected', reqDate=2021-04-11, postedBy='Sharon Stone', requestSentBy='Carl Mapada'}",
                                                         "Request{refStatus='Rejected', reqDate=2021-04-11, postedBy='Jack Ryan', requestSentBy='Carl Mapada'}"));
 
+    private final String FILENAME3 = "userJobSeekerPost.json";
+    JSONArray jsonArr3 = (JSONArray) Helper.ReadJSONFile(FILENAME3);
+    List<User> users3 = Helper.parseJson(jsonArr3.toJSONString());
+
     @Test
     public void testAlumniList(){
         Assert.assertEquals(Arrays.toString(expectedAlumniList.toArray()),
@@ -103,7 +107,7 @@ public class FunctionalUtilsTest {
     }
 
     @Test
-    public void tesTopKPreferredStateByJobSeeker(){
+    public void testTopKPreferredStateByJobSeeker(){
         Assert.assertEquals(expected4, FunctionalUtils.topKPreferredStateByJobSeeker.apply(users, 10));
 
         //test for users list is null

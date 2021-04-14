@@ -13,24 +13,6 @@ public class JobSeeker extends UserRole {
 
     public JobSeeker(){}
 
-//    public JobSeeker(String preferredJob, String preferredCompany, List<String> skills, List<Experience> experience, List<Request> referralRequest) {
-//        this.preferredJob = preferredJob;
-//        this.preferredCompany = preferredCompany;
-//        this.skills = skills;
-//        this.experience = experience;
-//        this.referralRequest = referralRequest;
-//    }
-//
-//    public JobSeeker(String name, String telephoneNumber, String address, String roleName, String preferredJob, String preferredCompany, List<String> skills, List<Experience> experience, List<Request> referralRequest) {
-//        super(name, telephoneNumber, address, roleName);
-//        this.preferredJob = preferredJob;
-//        this.preferredCompany = preferredCompany;
-//        this.skills = skills;
-//        this.experience = experience;
-//        this.referralRequest = referralRequest;
-//        this.jobsApplied = jobsApplied;
-//    }
-
     public JobSeeker(String name, String telephoneNumber, String address, String roleName, String preferredJob, String preferredCompany, List<String> skills, List<Experience> experience, List<Request> referralRequest, List<Job> jobsApplied) {
         super(name, telephoneNumber, address, roleName);
         this.preferredJob = preferredJob;

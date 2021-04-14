@@ -1,5 +1,7 @@
 package com.cpt4lazy.model;
 
+import java.util.List;
+
 public class JobLink extends Post{
 
     private String url;
