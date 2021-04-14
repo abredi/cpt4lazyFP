@@ -22,7 +22,7 @@ public class Cpt4lazyCLICommandTest {
             PicocliRunner.run(Cpt4lazyCLICommand.class, ctx, args);
 
             // cpt4lazyCLI
-            assertTrue(baos.toString().contains("Hi!"));
+            assertTrue(baos.toString().contains("Hi Lazy! This is a CLI application to query CPT4Lazy application. Enjoy!!!"));
         }
     }
 }
