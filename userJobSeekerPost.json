@@ -188,18 +188,9 @@
 				},
 				{
 					"type": "com.cpt4lazy.model.JobLink",
-
-					"url": [
-						"http://glasdoor.com",
-						"http://glasdoor.com",
-						"http://glasdoor.com",
-						"http://glasdoor.com",
-						"http://glasdoor.com",
-						"http://glasdoor.com"
-
-					]
+					"postText": "Hi MIU Compro. Please check this link.",
+					"url": "https://www.indeed.com/jobs?q=software%20engineer&l=Los%20Angeles&advn=8295759579475621&vjk=4b1c900a41243149"
 				}
-
 			]
 		}
 	},
