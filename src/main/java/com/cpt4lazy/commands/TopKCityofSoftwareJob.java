@@ -32,6 +32,7 @@ public final class TopKCityofSoftwareJob implements Runnable{
         Map<String, Integer> commonSkills = FunctionalUtils.topCityofSoftwareJobs.apply(users,top);
 
         if (verbose) {
+            System.out.println("The top " + top + " city of Software jobs Applied:");
             helper.prettyPrint(Collections.singletonList(commonSkills));
         }
     }

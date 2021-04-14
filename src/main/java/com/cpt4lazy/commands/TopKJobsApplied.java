@@ -30,6 +30,7 @@ public final class TopKJobsApplied implements Runnable{
         List<String> commonSkills = FunctionalUtils.topJobsApplied.apply(users,top);
 
         if (verbose) {
+            System.out.println("The top " + top + " Jobs, which applied by job seekers:");
             helper.prettyPrint(commonSkills);
         }
     }

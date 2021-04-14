@@ -32,6 +32,7 @@ public final class TopKAlmuniWithMostPost implements Runnable{
         Map<String,Integer> commonSkills = FunctionalUtils.topAlmuniwithMostPosts.apply(users,top);
 
         if (verbose) {
+            System.out.println("The top " + top + " Alumni with the most Post:");
             helper.prettyPrint(Collections.singletonList(commonSkills));
         }
     }
