@@ -1,13 +1,16 @@
 package com.cpt4lazy;
 
 import com.cpt4lazy.model.Alumni;
+import com.cpt4lazy.model.JobReferral;
 import com.cpt4lazy.model.User;
 import com.cpt4lazy.model.UserRole;
 import com.cpt4lazy.queries.FunctionalUtils;
+import com.cpt4lazy.queries.JobUtils;
 import com.cpt4lazy.utility.Helper;
 import org.json.simple.JSONArray;
 import org.junit.Assert;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 import  java.lang.StringBuilder;
 import java.util.*;
@@ -17,6 +20,9 @@ public class FunctionalUtilsTest {
     private final String FILENAME1 = "document.json";
     JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(FILENAME1);
     List<User> users = Helper.parseJson(jsonArr.toJSONString());
+    private final String FILENAME4 = "user.json";
+    JSONArray jsonArr4 = (JSONArray) Helper.ReadJSONFile(FILENAME4);
+    List<User> users4 = Helper.parseJson(jsonArr4.toJSONString());
     List<String> expected1 = new ArrayList<>(Arrays.asList("Nicolas Cage","Max Planck"));
     List<String> expected2 = new ArrayList<>(Arrays.asList("Sharon Stone", "Max Planck", "Lord Kelvin", "Adriana C. Ocampo Uria", "Jack Ryan", "Nicolas Cage", "Melissa Franklin"));
     List<String> expected3 = new ArrayList<>(Arrays.asList("Java", "Springboot", "SQL", "React Js", "Git", "MongoDB", "Azure", "Docker", "Terraform", "ReactJs"));
@@ -184,6 +190,41 @@ public class FunctionalUtilsTest {
     }
     /**
      * End of @author Amanuel E.Chorito  TEST
+     */
+
+    /**
+     * start @author Haymanot Adane Test
+     */
+    @Test
+    public void testCommonCompanyOfAlumni() {
+        List<User> us = users4.subList(0, users4.size());
+        List<String> exp = List.of("Bank of America");
+        Assert.assertEquals(exp, JobUtils.CommonCompanyOfAlumni.apply(us, 3));
+        us.removeAll(List.of(us.get(9),us.get(5),us.get(6),us.get(7),us.get(8)));
+        Assert.assertEquals(List.of(), JobUtils.CommonCompanyOfAlumni.apply(us,3));
+        Assert.assertEquals(List.of(), JobUtils.CommonCompanyOfAlumni.apply(nullUser,3));
+    }
+
+    @Test
+    public void testMostRequestedPostReferral() {
+        List<JobReferral> jobReferrals = JobUtils.mostRequestedPostReferral.apply(users4, 3);
+        assertEquals(jobReferrals.size(), 3);
+        List<User> urs = users4.subList(0, 5);
+        assertEquals(List.of(), JobUtils.mostRequestedPostReferral.apply(urs,3));
+        assertEquals(List.of(), JobUtils.mostRequestedPostReferral.apply(nullUser,3));
+    }
+
+    @Test
+    public void testMostPreferredCompanyByJobSeeker() {
+        List<User> us = users4.subList(0, users4.size());
+        List<String> exp = List.of("Microsoft");
+        Assert.assertEquals(exp, JobUtils.mostPreferredCompanyByJobSeeker.apply(us, 1));
+        us.removeAll(List.of(us.get(0),us.get(1),us.get(2),us.get(3),us.get(4)));
+        Assert.assertEquals(List.of(), JobUtils.mostPreferredCompanyByJobSeeker.apply(us,1));
+        Assert.assertEquals(List.of(), JobUtils.mostPreferredCompanyByJobSeeker.apply(nullUser,1));
+    }
+    /**
+     * end of @author Haymanot Adane
      */
 
 }
