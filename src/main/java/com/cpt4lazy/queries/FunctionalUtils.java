@@ -94,7 +94,7 @@ public abstract class FunctionalUtils {
     public static BiFunction<List<User>, Integer, List<String>>  topKPreferredStateByJobSeeker = (user, k) ->
             jobSeekerList.apply(user).stream()
                     .map(j -> j.getAddress().split(",")[1].trim())
-                    .limit(5)
+                    .limit(OptionalInt.of(k).orElse(0))
                     .collect(Collectors.toList());
 
     /**
