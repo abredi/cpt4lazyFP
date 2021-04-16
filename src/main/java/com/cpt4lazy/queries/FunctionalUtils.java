@@ -146,12 +146,65 @@ public abstract class FunctionalUtils {
             .collect(Collectors.toMap(Alumni::getName,entry->entry.getPost().size()));
 
 
+    /**
+     * @author jawaherElleuchy
+     */
+
+
+    public static  BiFunction<List<User> , Integer, List<String>> mostCommonWords=(user,k)->
+
+            Optional.ofNullable(user).orElse(List.of()).stream()
+                    .filter(r->r.getRole() instanceof Alumni)
+                    .map(s->(Alumni)s.getRole())
+                    .filter(a->(a.getPost() != null))
+                    .flatMap(p -> p.getPost().stream())
+                    .map(p ->p.getPostText().replace(".","").split(" "))
+                    .flatMap(s -> Arrays.stream(s).sorted())
+                    .collect(Collectors.groupingBy(s -> s, Collectors.counting()))
+                    .entrySet().stream()
+                    .sorted((l1,l2) -> Long.compare(l1.getValue(),l2.getValue()))
+                    .map(s -> s.getKey()).limit(k).collect(Collectors.toList());
 
 
 
+    
+    /**
+     * @author jawaherElleuchy
+     */
+    public static  BiFunction<List<Experience> ,String, List<Experience> >experienceFromPosition=
+            (experiences,position) -> experiences
+                    .stream()
+                    .filter(experience -> experience.getPosition().equals(position))
+                    .collect(Collectors.toList());
 
 
 
+    public static  BiFunction<List<User> ,String, List<String>> jobSeekerAsPosition=(user,position)->
+
+            Optional.ofNullable(user).orElse(List.of()).stream()
+                    .filter(r->r.getRole() instanceof JobSeeker)
+                    .map(s->(JobSeeker)s.getRole())
+                    .collect(Collectors.groupingBy(jobSeeker -> jobSeeker.getExperience()))
+                    .entrySet()
+                    .stream()
+                    .filter(e->e.getKey().equals(experienceFromPosition.apply(e.getKey(),position)))
+                    .flatMap(m -> m.getValue().stream())
+                    .map(j -> j.getName()).sorted().collect(Collectors.toList());
 
 
+    /**
+     * @author jawaherElleuchy
+     */
+
+    public static  BiFunction<List<User> ,Integer, List<String>> theMostCommonPosition=(user,k)->
+            Optional.ofNullable(user).orElse(List.of()).stream()
+                    .filter(r->r.getRole() instanceof JobSeeker)
+                    .map(s->(JobSeeker)s.getRole())
+                    .flatMap(jobSeeker -> jobSeeker.getExperience().stream())
+                    .map(experience -> experience.getPosition())
+                    .collect(Collectors.groupingBy(experiences -> experiences,Collectors.counting()))
+                    .entrySet()
+                    .stream()
+                    .sorted((e1,e2)-> (int) (e1.getValue()-e2.getValue()))
+                    .map(e-> e.getKey()).limit(k).collect(Collectors.toList());
 }

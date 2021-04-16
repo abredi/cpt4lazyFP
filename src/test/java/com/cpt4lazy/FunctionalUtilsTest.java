@@ -29,6 +29,9 @@ public class FunctionalUtilsTest {
     List<String> expected4 = new ArrayList<>(Arrays.asList("MA", "IL", "NY", "CA", "WA"));
     List<User> nullUser = null;
     List<String> expected5 = new ArrayList<>();
+    List<String> expected6 = new ArrayList<>(Arrays.asList("request", "link", "Students"));;
+    List<String> expected7 = Arrays.asList("Software Engineer");
+    List<String> expected8 = Arrays.asList("Abdulaziz Ali", "Amanuel Chorito", "Carl Mapada", "Haymanot Yimam", "Jawaher Elleuchy");
 
     Map<String,Integer>almuniPostExpected= new HashMap<>(){{put("Nicolas Cage",2);put("Sharon Stone" ,1);}};
     Map<String,Integer>cityExpected= new HashMap<>(){{put("New York",1);put("Chicago" ,1);}};
@@ -246,5 +249,23 @@ public class FunctionalUtilsTest {
     /**
      * end of @author Haymanot Adane
      */
+
+    /**
+     * @author Jawaher Elleuchy, TEST start
+     */
+
+    @Test
+    public void testMostCommonWords(){
+        Assert.assertEquals(expected6, FunctionalUtils.mostCommonWords.apply(users, 3));
+   }
+    @Test
+    public void theMostCommonPosition(){
+        Assert.assertEquals(expected7, FunctionalUtils.theMostCommonPosition.apply(users2, 2));
+    }
+
+    @Test
+    public void testJobSeekerAsPosition(){
+        Assert.assertEquals(expected8 , FunctionalUtils.jobSeekerAsPosition.apply(users2, "Software Engineer"));
+    }
 
 }
