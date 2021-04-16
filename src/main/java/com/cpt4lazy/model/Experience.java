@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Experience {
     private String company;
@@ -79,4 +80,17 @@ public class Experience {
                 ", toDate=" + toDate +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Experience)) return false;
+        Experience that = (Experience) o;
+        return Objects.equals(company, that.company) &&
+                Objects.equals(position, that.position) &&
+                Objects.equals(responsibility, that.responsibility) &&
+                Objects.equals(fromDate, that.fromDate) &&
+                Objects.equals(toDate, that.toDate);
+    }
+
 }

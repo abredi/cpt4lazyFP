@@ -7,9 +7,9 @@ import picocli.CommandLine.Option;
 
 
 @Command(name = "cpt4lazyCLI", description = "This is a CLI application to query CPT4Lazy application. THis " +
-        "is built by:\n ***** Carl Michael Mapada\n ***** Amanuel Chorito\n ***** Haymanot Yimam\n ***** Jawaher Elleuchy\n ***** Adulaziz Ali\n\n" +
-        "This is a project requirement for CS401 - Modern Programmin Practices\n" +
-        "by Professor Anthony Sander.",
+        "is built by:\n ***** Carl Michael Mapada\n ***** Amanuel Chorito\n ***** Haymanot Yimam\n ***** Jawaher Elleuchy\n ***** Adulaziz Ali\n" +
+        "This is a project requirement for CS401 - Modern Programming Practices\n" +
+        "by Professor Anthony Sander.\n\n",
         mixinStandardHelpOptions = true, subcommands = {AlumniWithMostRequestAccepted.class, AlumniWithMostRequestRejected.class,
         TopKCommonSkills.class, TopKPreferredStateByJobSeeker.class, TopKJobsApplied.class, TopKCityofSoftwareJob.class,
         TopKAlmuniWithMostPost.class,CommonCompanyOfAlumni.class,MostRequestedPostReferal.class,MostPreferredCompanyByJobSeeker.class})
