@@ -15,8 +15,8 @@ import static java.util.stream.Collectors.*;
  */
 public abstract class JobFunctionalUtils {
 
-    static BiPredicate<Location, String> compareCity = (location, city) -> location.getArea()[2].equals(city);
-    static BiPredicate<Location, String> compareState = (location, city) -> location.getArea()[1].equals(city);
+    static BiPredicate<Location, String> compareCity = (location, city) -> location.getArea()[2].contains(city);
+    static BiPredicate<Location, String> compareState = (location, city) -> location.getArea()[1].contains(city);
     static BiPredicate<String, String> findPosition = String::contains;
 
     public static TriFunction<List<Job>, String, Integer, List<String>>
