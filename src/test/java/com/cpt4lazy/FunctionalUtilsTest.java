@@ -63,6 +63,10 @@ public class FunctionalUtilsTest {
     JSONArray jsonArr3 = (JSONArray) Helper.ReadJSONFile(FILENAME3);
     List<User> users3 = Helper.parseJson(jsonArr3.toJSONString());
 
+    /**
+     * @author Carl Mapada
+     */
+    /*************************** START OF CARL MAPADA TEST  ************************************/
     @Test
     public void testAlumniList(){
         Assert.assertEquals(Arrays.toString(expectedAlumniList.toArray()),
@@ -98,12 +102,22 @@ public class FunctionalUtilsTest {
         Assert.assertEquals(expected5, FunctionalUtils.alumniWithMostRequestAccepted.apply(nullUser,10));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testAlumniWithMostRequestAccepted_negativeInput() {
+        Assert.assertEquals(expected1, FunctionalUtils.alumniWithMostRequestAccepted.apply(users, -10));
+    }
+
     @Test
     public void testAlumniWithMostRequestRejected(){
         Assert.assertEquals(expected2, FunctionalUtils.alumniWithMostRequestRejected.apply(users,10));
 
         //test for users list is null
         Assert.assertEquals(expected5, FunctionalUtils.alumniWithMostRequestAccepted.apply(nullUser,10));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAlumniWithMostRequestRejected_negativeInput() {
+        Assert.assertEquals(expected2, FunctionalUtils.alumniWithMostRequestRejected.apply(users, -10));
     }
 
     @Test
@@ -114,13 +128,25 @@ public class FunctionalUtilsTest {
         Assert.assertEquals(expected5, FunctionalUtils.commonJobSeekerSkills.apply(nullUser,10));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testCommonJobSeekerSkills_negativeInput() {
+        Assert.assertEquals(expected3, FunctionalUtils.commonJobSeekerSkills.apply(users, -10));
+    }
+
     @Test
     public void testTopKPreferredStateByJobSeeker(){
-        Assert.assertEquals(expected4, FunctionalUtils.topKPreferredStateByJobSeeker.apply(users, 10));
+        Assert.assertEquals(expected4, FunctionalUtils.topKPreferredStateByJobSeeker.apply(users2, 10));
 
         //test for users list is null
         Assert.assertEquals(expected5, FunctionalUtils.topKPreferredStateByJobSeeker.apply(nullUser,10));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testTopKPreferredStateByJobSeeker_negativeInput() {
+        Assert.assertEquals(expected4, FunctionalUtils.topKPreferredStateByJobSeeker.apply(users2, -5));
+    }
+    /************************************** End of Carl Mapada Test ************************************/
+
     /**
      * @author Amanuel E.Chorito, TEST start
      */
@@ -154,14 +180,11 @@ public class FunctionalUtilsTest {
     }
     @Test
     public void topCityofSoftwareJobs_negativeValueTest(){
-
-
         //test for users list is null and no number entered
         Assert.assertEquals(Map.of(), FunctionalUtils.topCityofSoftwareJobs.apply(nullUser,-1));
     }
     @Test
     public void topCityofSoftwareJobs_PositiveValueTest(){
-
 
         //test for users list is null and no number entered
         Assert.assertEquals(cityExpected, FunctionalUtils.topCityofSoftwareJobs.apply(users3,2));
@@ -170,20 +193,17 @@ public class FunctionalUtilsTest {
     @Test
     public void topJobsApplied_NullTest(){
 
-
         //test for users list is null and no number entered
         Assert.assertEquals(expected5, FunctionalUtils.topJobsApplied.apply(nullUser,null));
     }
     @Test
     public void topJobsApplied_negativeValueTest(){
 
-
         //test for users list is null and no number entered
         Assert.assertEquals(expected5, FunctionalUtils.topJobsApplied.apply(nullUser,-1));
     }
     @Test
     public void topJobsApplied_PositiveValueTest(){
-
 
         //test for users list is null and no number entered
         Assert.assertEquals(jobsExpected, FunctionalUtils.topJobsApplied.apply(users3,2));
