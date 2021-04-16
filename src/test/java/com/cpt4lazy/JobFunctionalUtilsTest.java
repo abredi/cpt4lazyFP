@@ -48,4 +48,10 @@ class JobFunctionalUtilsTest {
         assertEquals(List.of(), JobFunctionalUtils.findPreferredCompany.apply(jobs, state, position, Double.MAX_VALUE));
         assertEquals(List.of(), JobFunctionalUtils.findPreferredCompany.apply(null, state, position, 90000.0));
     }
+
+    @Test
+    void name() {
+       List<String> companies = JobFunctionalUtils.findTopKHiringCompaniesInSpecifiedCity.apply(jobs, "Software", "San Francisco", Integer.parseInt("5"));
+        System.out.println(companies);
+    }
 }
