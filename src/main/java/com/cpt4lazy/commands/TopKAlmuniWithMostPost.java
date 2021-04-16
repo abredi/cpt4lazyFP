@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CommandLine.Command(name = "topKAlmuniWithMostPost", description = "Top K Almuni, who post the most jobs and referral",
+@CommandLine.Command(name = "topKAlmuniWithMostPost", description = "Search top k Almuni, who post the most jobs and referral",
         mixinStandardHelpOptions = true)
 public final class TopKAlmuniWithMostPost implements Runnable {
 
@@ -34,16 +34,15 @@ public final class TopKAlmuniWithMostPost implements Runnable {
         try {
             topAlmuni = FunctionalUtils.topAlmuniwithMostPosts.apply(users, top);
         }
-           catch (IllegalArgumentException e){
-               System.out.println("You try to input a negative integer value. Please retry again.");
-               return;
+        catch (IllegalArgumentException e){
+            System.out.println("You try to input a negative integer value. Please retry again.");
+            return;
 
-           }
+        }
 
-            if (verbose) {
-                System.out.println("The top " + top + " Alumni with the most Post:");
-                helper.prettyPrint(Collections.singletonList(topAlmuni));
-            }
-
+        if (verbose) {
+            System.out.println("The top " + top + " Alumni with the most Post:");
+            helper.prettyPrint(Collections.singletonList(topAlmuni));
+        }
     }
 }

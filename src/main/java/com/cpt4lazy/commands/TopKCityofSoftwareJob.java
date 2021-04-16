@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CommandLine.Command(name = "topKCityofSoftwareJob", description = "Top K city of Software jobs Applied",
+@CommandLine.Command(name = "topKCityofSoftwareJob", description = "Search top k city of Software jobs Applied",
         mixinStandardHelpOptions = true)
 public final class TopKCityofSoftwareJob implements Runnable{
 
@@ -31,19 +31,18 @@ public final class TopKCityofSoftwareJob implements Runnable{
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
 
-            Map<String, Integer> topCities;
-try {
-    topCities=FunctionalUtils.topCityofSoftwareJobs.apply(users, top);
-}
-catch (IllegalArgumentException e){
-    System.out.println("You try to input a negative integer value. Please retry again.");
-    return;
-
-}
-            if (verbose) {
-                System.out.println("The top " + top + " city of Software jobs Applied:");
-                helper.prettyPrint(Collections.singletonList(topCities));
-            }
+        Map<String, Integer> topCities;
+        try {
+            topCities=FunctionalUtils.topCityofSoftwareJobs.apply(users, top);
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("You try to input a negative integer value. Please retry again.");
+            return;
+        }
+        if (verbose) {
+            System.out.println("The top " + top + " city of Software jobs Applied:");
+            helper.prettyPrint(Collections.singletonList(topCities));
+        }
 
     }
 }

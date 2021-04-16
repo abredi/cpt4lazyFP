@@ -8,7 +8,7 @@ import picocli.CommandLine;
 
 import java.util.List;
 
-@CommandLine.Command(name = "topKJobsApplied", description = "Top K jobs, which applied by job seekers",
+@CommandLine.Command(name = "topKJobsApplied", description = "Search top k jobs, which applied by job seekers",
         mixinStandardHelpOptions = true)
 public final class TopKJobsApplied implements Runnable{
 
@@ -38,7 +38,7 @@ public final class TopKJobsApplied implements Runnable{
 
     }
             if (verbose) {
-                System.out.println("The top " + top + " Jobs, which applied by job seekers:");
+                System.out.println("The top " + top + " Jobs, applied by job seekers:");
                 helper.prettyPrint(topJobs);
             }
 
