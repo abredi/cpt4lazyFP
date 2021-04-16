@@ -6,9 +6,10 @@ import com.cpt4lazy.utility.Helper;
 import org.json.simple.JSONArray;
 import picocli.CommandLine;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@CommandLine.Command(name = "MostPreferredCompanyByJobSeeker", description = "Search the top most companies JobSeekers wants to work for:",
+@CommandLine.Command(name = "mostPreferredCompanyByJobSeeker", description = "Search the top k most companies JobSeekers wants to work for:",
         mixinStandardHelpOptions = true)
 final public class MostPreferredCompanyByJobSeeker implements Runnable{
     Helper helper = new Helper();
@@ -27,9 +28,17 @@ final public class MostPreferredCompanyByJobSeeker implements Runnable{
     public void run() {
         JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
         List<User> users = Helper.parseJson(jsonArr.toJSONString());
-        List<String> companyName = JobUtils.mostPreferredCompanyByJobSeeker.apply(users,top);
+        List<String> companyName = new ArrayList<>();
 
+        try{
+            companyName = JobUtils.mostPreferredCompanyByJobSeeker.apply(users,top);
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("You try to input a negative integer value. Please retry again.");
+            return;
+        }
         if (verbose) {
+            System.out.println("The " + top + " most preferred company by the JobSeeker are:\n");
             helper.prettyPrint(companyName);
         }
     }

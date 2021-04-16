@@ -40,7 +40,7 @@ public class TopKPreferredStateByJobSeeker implements Runnable{
         }
 
         if (verbose) {
-            System.out.println("The top " + top + " Alumni with most referral requests accepted are:\n");
+            System.out.println("The top " + top + " preferred state by the JobSeeker are:\n");
             helper.prettyPrint(state);
         }
     }

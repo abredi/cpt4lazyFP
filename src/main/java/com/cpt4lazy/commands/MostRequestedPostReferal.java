@@ -1,5 +1,6 @@
 package com.cpt4lazy.commands;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.cpt4lazy.queries.JobUtils;
@@ -13,7 +14,7 @@ import com.cpt4lazy.utility.Helper;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "MostRequestedPostReferal", description = "Search post referal with most request asked.",
+@Command(name = "mostRequestedPostReferal", description = "Search post referral with most request asked.",
 mixinStandardHelpOptions = true)
 final public class MostRequestedPostReferal implements Runnable{
 	
@@ -33,9 +34,17 @@ final public class MostRequestedPostReferal implements Runnable{
 	    public void run() {
 	        JSONArray jsonArr = (JSONArray) Helper.ReadJSONFile(user);
 	        List<User> users4 = Helper.parseJson(jsonArr.toJSONString());
-	        List<JobReferral> joblist = JobUtils.mostRequestedPostReferral.apply(users4,top);
+	        List<JobReferral> joblist = new ArrayList<>();
+	        try{
+				joblist = JobUtils.mostRequestedPostReferral.apply(users4,top);
+			}
+	        catch (IllegalArgumentException e){
+				System.out.println("You try to input a negative integer value. Please retry again.");
+				return;
+			}
 
 	        if (verbose) {
+				System.out.println("The " + top + " most requested post referrals by the JobSeeker are:\n");
 	            helper.prettyPrint(joblist);
 	        }
 	    }
