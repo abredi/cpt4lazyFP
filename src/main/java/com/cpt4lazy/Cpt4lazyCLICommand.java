@@ -12,7 +12,8 @@ import picocli.CommandLine.Option;
         "by Professor Anthony Sander.\n\n",
         mixinStandardHelpOptions = true, subcommands = {AlumniWithMostRequestAccepted.class, AlumniWithMostRequestRejected.class,
         TopKCommonSkills.class, TopKPreferredStateByJobSeeker.class, TopKJobsApplied.class, TopKCityofSoftwareJob.class,
-        TopKAlmuniWithMostPost.class,CommonCompanyOfAlumni.class,MostRequestedPostReferal.class,MostPreferredCompanyByJobSeeker.class})
+        TopKAlmuniWithMostPost.class,CommonCompanyOfAlumni.class,MostRequestedPostReferal.class,MostPreferredCompanyByJobSeeker.class,
+        MostCommonWords.class, JobSeekerAsPosition.class, TheMostCommonPosition.class})
 public class Cpt4lazyCLICommand implements Runnable {
 
     @Option(names = {"-v", "--verbose"}, description = "...")
